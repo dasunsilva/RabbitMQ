@@ -16,11 +16,12 @@ while(True):
     
     timeRandom = random.randint(1,3)
     
-    message = f"Hello This is message {index}!"
+    # message = f"Hello This is message {index}!"
+    message = f"{index}!"
 
     channel.basic_publish(exchange='', routing_key='hello', body=message)
 
-    print(f" [x] Sent {message}")
+    print(f"Sent {message}")
     
     index+=1   
     
