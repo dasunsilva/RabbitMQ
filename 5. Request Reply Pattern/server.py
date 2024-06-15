@@ -8,7 +8,7 @@ def callbackReq(ch, method, properties, body):
                      properties=pika.BasicProperties(correlation_id=properties.correlation_id), 
                      body=f"Reply to: {body} from server with id: {properties.correlation_id}")
 
-connectionParameters = pika.ConnectionParameters('localhost') # We can add IP address of the RabbitMQ server here
+connectionParameters = pika.ConnectionParameters('rabbitmq.kaushitha.xyz', port= 15672) # We can add IP address of the RabbitMQ server here
 
 connection = pika.BlockingConnection(connectionParameters)
 
